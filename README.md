@@ -31,7 +31,7 @@ CLAUDE.md         Document de referència tècnica emprat com a context persiste
 Cada ingredient té un perfil base de sis atributs (dolç, àcid, agre, salat, picant, neutralitzador) en escala [0, 10]. La cocció i el tall modifiquen aquests valors al llarg del temps. Quan s'entrega un plat, el perfil combinat és analitzat per `FlavorCalculator`, que calcula:
 
 - **Sabor(s) dominant(s):** el top 1–2 dels cinc eixos tastables (neutralitzador exclòs). Si tres o més eixos cauen dins la tolerància de codominància, la llista de dominants és buida.
-- **balanceScore:** `1 / (1 + variança)` sobre els cinc eixos tastables — una mesura estadística d'uniformitat.
+- **balanceScore:** `1 / (1 + variància)` sobre els cinc eixos tastables — una mesura estadística d'uniformitat.
 - **Intensitat:** suma dels cinc eixos tastables menys el neutralitzador.
 
 Set regles emocionals s'avaluen en ordre de prioritat: Disgusted → Disappointed → Delighted → Cozy → Refreshed → Spicy → Confused. Vegeu `CLAUDE.md` per a la taula completa de regles i valors de llindar.
